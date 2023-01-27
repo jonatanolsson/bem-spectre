@@ -1,5 +1,5 @@
 <a href="spectre">
-  <img src="spectre/img/spectre-logo.svg" width="72" height="72">
+  <img src="img/spectre-logo.svg" width="72" height="72">
 </a>
 
 ## BEM Spectre.css
