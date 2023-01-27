@@ -1,3 +1,19 @@
+# BEM Spectre Changelog
+
+### v0.0.1
+
+- Moved docs to /docs
+- Moved from gulp to parcel
+- Changed semantics to use the BEM methodology
+  - https://getbem.com/introduction/
+- Updated normalizer to the latest
+  - Is now a part of dependencies instead of hardcoded
+- Added some changes
+  - `:focus-within` for dropdowns
+  - changed to `::marker` as [this pull request](https://github.com/picturepan2/spectre/pull/674) suggests 
+  - 
+
+
 #### Spectre.css Changelog
 
 ##### v0.5.9 [#](https://github.com/picturepan2/spectre/releases/tag/v0.5.9)
