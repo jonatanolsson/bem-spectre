@@ -54,7 +54,7 @@ p {
 a,
 ins,
 u {
-  text-decoration-skip: ink edges;
+  text-decoration-skip: ink edges; //experimental feature safari support only
 }
 
 abbr[title] {
