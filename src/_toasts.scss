@@ -8,19 +8,19 @@
   padding: $layout-spacing;
   width: 100%;
 
-  &.toast-primary {
+  &.toast--primary {
     @include toast-variant($primary-color);
   }
 
-  &.toast-success {
+  &.toast--success {
     @include toast-variant($success-color);
   }
 
-  &.toast-warning {
+  &.toast--warning {
     @include toast-variant($warning-color);
   }
 
-  &.toast-error {
+  &.toast--error {
     @include toast-variant($error-color);
   }
 
