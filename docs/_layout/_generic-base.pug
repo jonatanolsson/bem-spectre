@@ -1,0 +1,28 @@
+block variables
+    - var slug = ''
+    - var parent = ''
+    - var title = 'Spectre - Generic base'
+
+
+html(lang='en')
+    head
+        title= title
+        meta(charset='utf-8')
+        meta(name='robots' content='index, follow')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+        if slug != parent
+            link(rel='shortcut icon' href='../../img/favicons/favicon.ico')
+            link(rel='stylesheet' href='../../src/spectre.scss')
+            link(rel='stylesheet' href='../../src/spectre-exp.scss')
+            link(rel='stylesheet' href='../../src/spectre-icons.scss')
+            link(rel='stylesheet' href='../scss/docs.scss')
+        else
+            link(rel='shortcut icon' href='../img/favicons/favicon.ico')
+            link(rel='icon' href='../img/favicons/favicon.png')
+            link(rel='stylesheet' href='../src/spectre.scss')
+            link(rel='stylesheet' href='scss/docs.scss')
+
+    body
+        block navbar
+            include _generic-navbar
+        block content
