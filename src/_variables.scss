@@ -90,6 +90,8 @@ $layout-spacing-xl: $unit-6 !default;
 
 // Borders
 $border-radius: $unit-h !default;
+$border-radius-lg: $unit-2 !default;
+$border-radius-xl: $unit-h !default;
 $border-width: $unit-o !default;
 $border-width-lg: $unit-h !default;
 $border-color: lighten($dark-color, 65%) !default;
@@ -115,6 +117,10 @@ $control-width-md: 640px !default;
 $control-width-lg: 960px !default;
 $control-width-xl: 1280px !default;
 
+
+
+$full-height-body: true;
+
 // Layout
 $columns: 12;
 
@@ -127,6 +133,7 @@ $breakpoints: (
         xxl: 1440px, // was 2x before
 ) !default;
 
+$responsive-containers: true; // use responsive containers
 $responsive-breakpoint: map-get($breakpoints, xs) !default;
 
 // Z-index
@@ -137,3 +144,10 @@ $zindex-3: 300 !default;
 $zindex-4: 400 !default;
 $zindex-5: 500 !default;
 $zindex-6: 600 !default;
+
+// Components
+
+$navbar-padding-x: $unit-3;
+$navbar-padding-y: $unit-3;
+$navbar-breakpoint: 'sm';
+
