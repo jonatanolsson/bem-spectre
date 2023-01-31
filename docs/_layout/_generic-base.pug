@@ -25,4 +25,12 @@ html(lang='en')
     body
         block navbar
             include _generic-navbar
-        block content
+        main
+            block content
+        footer
+            block footer
+                .container
+                    .columns
+                        .column
+                            h3 This is the footer
+                            p This could contain anything
