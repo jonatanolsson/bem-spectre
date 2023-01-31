@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             toggle.setAttribute('aria-expanded', expand)
         }
 
-        const toggleEventHandler = (event) => {
+        const toggleEventHandler = () => {
             setDropDownExpanded(!dropdownStateOpen())
         }
 
@@ -37,10 +37,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         dropdown.addEventListener('keydown', (event) => {
             const currentMenuItem = getNearestParentWithSelector(document.activeElement, '.menu__item');
 
-
-            /**
-             * TODO: Add function to use while for nextSibiling so we can jump over elements that are not focusable
-             */
             switch (event.key.toLowerCase()) {
                 case 'escape':
                     if (dropdownStateOpen()) {
