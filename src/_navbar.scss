@@ -1,21 +1,35 @@
 // Navbar
 .navbar {
-  align-items: stretch;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  padding: $navbar-padding-y $navbar-padding-x;
+  justify-content: end;
+  width: 100%;
 
-  .navbar__section {
+  &, .navbar__collapsable {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .navbar__collapsable {
+    display: none;
+    justify-content: space-between;
+  }
+
+  .navbar__brand-section {
+    min-height: $control-size;
+  }
+
+  .navbar__section, .navbar__brand-section {
     align-items: center;
     display: flex;
     flex: 1 0 0;
 
     &:not(:first-child):last-child {
-      justify-content: flex-end;
+      justify-content: end;
     }
   }
 
-  .navbar__center {
+  .navbar__center { // might not work when having the collapse method, possible solution is to use position: absolute;
     align-items: center;
     display: flex;
     flex: 0 0 auto;
@@ -24,5 +38,104 @@
   .navbar__brand {
     font-size: $font-size-lg;
     text-decoration: none;
+  }
+
+  .navbar__toggler {
+    display: block;
+
+    .icon-cross {
+      display: none;
+    }
+  }
+
+  /**
+    Checkbox works as well
+   */
+  input[type="checkbox"]:checked ~ .navbar__collapsable,
+  &--expanded .navbar__collapsable {
+    display: block;
+  }
+
+  @include breakpoint-up($navbar-breakpoint) {
+    .navbar__toggler {
+      display: none;
+    }
+
+    .navbar__collapsable {
+      display: flex;
+      flex: 1 1 auto;
+
+      .nav {
+        flex-direction: row;
+        margin: 0;
+        align-items: center;
+
+        .nav__item {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .navbar__brand-section {
+      flex: 0;
+    }
+  }
+
+  @include breakpoint-down($navbar-breakpoint) {
+    max-width: 100%;
+    
+    &--expanded {
+      position: absolute;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: start;
+
+      .navbar__collapsable {
+        > * {
+          margin-top: 0;
+          margin-bottom: calc($layout-spacing * 2);
+
+          &:first-of-type {
+            margin-top: $layout-spacing;
+          }
+        }
+      }
+
+      .navbar__section {
+        display: flex;
+
+        &:not(:first-child):last-child {
+          justify-content: start;
+        }
+      }
+
+      .navbar-nav {
+        .nav__item {
+          a {
+            padding-left: 0;
+            display: block;
+          }
+        }
+      }
+
+      .navbar__brand-section {
+        justify-content: start;
+        flex: 0;
+      }
+
+      .navbar__toggler {
+        position: absolute;
+        top: $navbar-padding-y;
+        right: $navbar-padding-x;
+
+        .icon-cross {
+          display: inline-block;
+        }
+
+        .icon-menu {
+          display: none;
+        }
+      }
+    }
   }
 }
