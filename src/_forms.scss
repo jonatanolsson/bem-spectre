@@ -166,7 +166,7 @@ textarea.form-input {
   }
 
   &:not([multiple]):not([size]) {
-    background: $bg-color-light url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23667189'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E") no-repeat right .35rem center / .4rem .5rem;
+    background: $bg-color-light url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23667189'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E") no-repeat right .4375rem center / .5rem .625rem;
     padding-right: calc($control-icon-size + $control-padding-x);
   }
 }
@@ -193,7 +193,7 @@ textarea.form-input {
   }
 
   .form-input {
-    padding-left: $control-icon-size + $control-padding-y * 2;
+    padding-left: calc($control-icon-size + $control-padding-y * 2);
   }
 }
 
@@ -203,7 +203,7 @@ textarea.form-input {
   }
 
   .form-input {
-    padding-right: $control-icon-size + $control-padding-y * 2;
+    padding-right: calc($control-icon-size + $control-padding-y * 2);
   }
 }
 
