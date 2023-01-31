@@ -12,6 +12,7 @@ h6 {
   margin-bottom: .5em;
   margin-top: 0;
 }
+
 .h1,
 .h2,
 .h3,
@@ -20,26 +21,32 @@ h6 {
 .h6 {
   font-weight: 500;
 }
+
 h1,
 .h1 {
   font-size: $font-size-h1;
 }
+
 h2,
 .h2 {
   font-size: $font-size-h2;
 }
+
 h3,
 .h3 {
   font-size: $font-size-h3;
 }
+
 h4,
 .h4 {
   font-size: $font-size-h4;
 }
+
 h5,
 .h5 {
   font-size: $font-size-h5;
 }
+
 h6,
 .h6 {
   font-size: $font-size-h6;
@@ -55,6 +62,16 @@ a,
 ins,
 u {
   text-decoration-skip: ink edges; //experimental feature safari support only
+}
+
+time {
+  display: inline-block;
+  margin: 0 0 $unit-2;
+}
+
+p > time {
+  display: inline;
+  margin: 0;
 }
 
 abbr[title] {
@@ -85,6 +102,11 @@ blockquote {
   p:last-child {
     margin-bottom: 0;
   }
+
+  cite {
+    color: lighten($body-font-color, 20%);
+  }
+
 }
 
 // Lists
@@ -123,6 +145,7 @@ dl {
   dt {
     font-weight: bold;
   }
+
   dd {
     margin: $unit-2 0 $unit-4 0;
   }
