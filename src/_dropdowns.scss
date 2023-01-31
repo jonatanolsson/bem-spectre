@@ -20,10 +20,12 @@
     }
   }
 
+  &--active .menu,
   &.active .menu,
-  &:focus-within .menu,
-  .dropdown__toggle:focus + .menu,
-  .menu:hover {
+    //&:focus-within .menu,
+    //.dropdown__toggle:focus + .menu,
+    //.menu:hover
+  {
     display: block;
   }
 

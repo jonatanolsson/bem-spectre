@@ -124,18 +124,24 @@ block docs-content
       .column.col--xs-12
         .dropdown
           .btn-group
-            a.btn.btn--primary dropdown button
+            a.btn.btn--primary dropdown button acc
             a.btn.btn--primary.dropdown__toggle(tabindex="0")
               i.icon.icon-caret
-            ul.menu
-              li.menu__item
-                a(href="#dropdowns")
+            ul.menu(role="menu")
+              li.menu__item(role="presentation")
+                a(href="#dropdowns" role="menuitem")
                   | Slack
-              li.menu__item
-                a(href="#dropdowns")
+              li.divider(role="presentation")
+              li.menu__item(role="presentation")
+                  label.form-checkbox
+                      input(type="checkbox")
+                      i.form-icon
+                      | Test checkbox
+              li.menu__item(role="presentation")
+                a(href="#dropdowns" role="menuitem")
                   | Hipchat
-              li.menu__item
-                a(href="#dropdowns")
+              li.menu__item(role="presentation")
+                a(href="#dropdowns" role="menuitem")
                   | Skype
       .column.col--xs-12
         .dropdown
@@ -213,3 +219,5 @@ block docs-content
 
 
   include ../_layout/_footer
+  script(type="module")
+    include ../js/dropdown.js
