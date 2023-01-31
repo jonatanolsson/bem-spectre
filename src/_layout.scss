@@ -1,6 +1,7 @@
 /**
   Todo: automate the steps and the grids using map
  */
+$grid-spacing: calc($layout-spacing / ($layout-spacing)) * $html-font-size;
 
 // Layout
 .container {
@@ -10,8 +11,24 @@
   padding-right: $layout-spacing;
   width: 100%;
 
-  $grid-spacing: calc($layout-spacing / ($layout-spacing)) * $html-font-size;
+  /**
+    Responsive containers by default
+   */
+  @if $responsive-containers {
+    @each $breakpoint, $breakpoint-width in $breakpoints {
+      @include breakpoint-up($breakpoint) {
+        max-width: calc($grid-spacing * 2 + $breakpoint-width);
+      }
+    }
 
+    &.container--fluid {
+      max-width: 100%;
+    }
+  }
+
+  /**
+    Explicit size
+   */
   @each $breakpoint, $breakpoint-width in $breakpoints {
     &.container--#{$breakpoint} {
       max-width: calc($grid-spacing * 2 + $breakpoint-width);
@@ -50,7 +67,7 @@
   }
 }
 
-[class~="col--" i],
+[class*="col--" i],
 .column {
   flex: 1;
   max-width: 100%;
@@ -67,7 +84,6 @@
     width: calc(($i / 12) * 100%)
   }
 }
-
 
 .col--auto {
   flex: 0 0 auto;
@@ -103,16 +119,16 @@
       }
     }
 
-    #{unquote($string)}{
-      flex:none;
+    #{unquote($string)} {
+      flex: none;
     }
 
-    .show-#{$breakpoint}{
+    .show-#{$breakpoint} {
       display: block !important;
     }
 
-    .hide-#{$breakpoint}{
-      display:none !important;
+    .hide-#{$breakpoint} {
+      display: none !important;
     }
   }
 }
