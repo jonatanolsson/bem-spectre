@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 return;
             }
 
+            /**
+             * When already open (mouse click for example. don't toggle the state
+             */
+            if (/arrowdown/.test(lcKey) && toggle.getAttribute('aria-expanded') === 'true') {
+                return;
+            }
+
             toggleEventHandler(event)
         })
 
