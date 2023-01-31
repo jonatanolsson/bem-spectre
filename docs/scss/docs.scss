@@ -16,7 +16,7 @@
   }
 
   .off-canvas-sidebar {
-    width: 12rem;
+    width: 15rem;
   }
 
   .off-canvas-content {
@@ -95,7 +95,7 @@
 .docs-content {
   flex: 1 1 auto;
   padding: 0 4rem;
-  width: calc(100vw - 12rem);
+  width: calc(100vw - 15rem);
 
   & > .container {
     margin-left: 0;
@@ -1087,4 +1087,9 @@
       }
     }
   }
+}
+
+.off-canvas .off-canvas-sidebar
+{
+  width: 15rem
 }
