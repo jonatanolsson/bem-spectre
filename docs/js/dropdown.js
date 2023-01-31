@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const toggle = dropdown.querySelector('.dropdown__toggle');
 
         const setDropDownExpanded = (expand) => {
-            expand ? dropdown.classList.add('dropdown--active') : dropdown.classList.remove('dropdown--active');
+            dropdown.classList.toggle('dropdown--active', expand)
             toggle.setAttribute('aria-expanded', expand)
-
         }
 
         const toggleEventHandler = (event) => {
