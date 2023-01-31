@@ -1,4 +1,4 @@
-import {focus_keys, getNearestParentWithSelector} from "../js/generic";
+import {getNearestParentWithSelector} from "../../js/generic";
 
 const acceptedFocusableItems = ['a', 'input', 'button', ' [tabindex]:not([tabindex="-1"]', 'textarea', 'select'];
 
