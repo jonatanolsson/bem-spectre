@@ -9,9 +9,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const dropdownStateOpen = () => (dropdown.classList.contains('dropdown--active') || dropdown.getAttribute('aria-expanded') === 'true');
         const toggle = dropdown.querySelector('.dropdown__toggle');
 
+        const setDropDownExpanded = (expand) => {
+            expand ? dropdown.classList.add('dropdown--active') : dropdown.classList.remove('dropdown--active');
+            toggle.setAttribute('aria-expanded', expand)
+
+        }
+
         const toggleEventHandler = (event) => {
-            dropdown.classList.toggle('dropdown--active');
-            toggle.setAttribute('aria-expanded', dropdownStateOpen().toString())
+            setDropDownExpanded(!dropdownStateOpen())
         }
 
         toggle.addEventListener('click', toggleEventHandler)
@@ -23,7 +28,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 event.preventDefault()
             }
 
-            if (!/enter|\s/.test(lcKey)) {
+            if (!/enter|\s|arrowdown/.test(lcKey)) {
                 return;
             }
 
@@ -31,10 +36,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
 
         dropdown.addEventListener('keydown', (event) => {
-            if (event.key.toLowerCase() === 'escape' && dropdownStateOpen()) {
-                toggleEventHandler()
-            }
-
             const currentMenuItem = getNearestParentWithSelector(document.activeElement, '.menu__item');
 
 
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             switch (event.key.toLowerCase()) {
                 case 'escape':
                     if (dropdownStateOpen()) {
-                        toggleEventHandler()
+                        setDropDownExpanded(false)
                     }
                     break;
                 case 'arrowdown':
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         dropdown.addEventListener('focusout', (event) => {
             if (!dropdown.contains(event.relatedTarget) || dropdownStateOpen() && (!event.relatedTarget || (event.relatedTarget.classList.contains('dropdown__toggle') && event.relatedTarget !== toggle))) {
-                toggleEventHandler(event)
+                setDropDownExpanded(false)
             }
         })
     }
