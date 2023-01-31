@@ -17,12 +17,23 @@ body {
   color: $body-font-color;
   font-family: $body-font-family;
   font-size: $font-size;
-  overflow-x: hidden;
   text-rendering: optimizeLegibility;
 
   @if ($font-smoothing) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@if $full-height-body {
+  body {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+  }
+
+  main {
+    flex: auto;
   }
 }
 
