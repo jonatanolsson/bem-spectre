@@ -65,19 +65,23 @@ $grid-spacing: calc($layout-spacing / ($layout-spacing)) * $html-font-size;
     flex-wrap: nowrap;
     overflow-x: auto;
   }
-}
 
-[class*="col--" i],
-.column {
-  flex: 1;
-  max-width: 100%;
-  padding-left: $layout-spacing;
-  padding-right: $layout-spacing;
+  > * {
+    max-width: 100%;
+    width: 100%;
+    padding-left: $layout-spacing;
+    padding-right: $layout-spacing;
 
-  &.col--auto, &[class*="col--"] {
-    flex: none;
+    &.col--auto, &[class*="col--"] {
+      flex: none;
+    }
   }
 }
+
+.column {
+  flex-shrink: 0;
+}
+
 
 @for $i from 1 through $columns {
   .col--#{$i} {
@@ -120,7 +124,7 @@ $grid-spacing: calc($layout-spacing / ($layout-spacing)) * $html-font-size;
     }
 
     #{unquote($string)} {
-      flex: none;
+      flex: 0 0 auto;
     }
 
     .show-#{$breakpoint} {
