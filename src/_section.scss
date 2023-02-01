@@ -1,0 +1,14 @@
+.section {
+  margin-top: $unit-6;
+  margin-bottom: $unit-4;
+
+  &.section--lg {
+    margin-top: calc($unit-6 * 2);
+    margin-bottom: calc($unit-4 * 2);
+  }
+
+  &.section--sm {
+    margin-top: calc($unit-6 * 0.5);
+    margin-bottom: calc($unit-4 * 0.5);
+  }
+}
