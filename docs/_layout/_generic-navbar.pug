@@ -1,18 +1,19 @@
-nav.navbar.container
-    .navbar__brand-section
-        a.navbar__brand.text-bold.mr-2(href="/") Brand
-    button.navbar__toggler.btn.btn--primary.btn--action#navbar-toggler(type="button" aria-expanded="false" aria-controls="main-navbar" aria-label="Toggle navigation")
-        i.icon.icon-menu(aria-label="open menu")
-        i.icon.icon-cross(aria-label="close menu")
-    //label.navbar__toggler.btn.btn--primary.btn--action(for="navbar-checkbox")
-    //input(type="checkbox" tabindex="-1").d-hide#navbar-checkbox
-    .navbar__collapsable#main-navbar
-        ul.nav.navbar-nav
-            li.nav__item
-                a(href="/1") Link 1
-            li.nav__item
-                a(href="/1") Link 2
-            li.nav__item
-                a(href="/1") Link 3
+nav.navbar
+    .navbar__container.container
+        .navbar__brand-section
+            a.navbar__brand.text-bold.mr-2(href="/") Brand
+        button.navbar__toggler.btn.btn--primary.btn--action#navbar-toggler(type="button" aria-expanded="false" aria-controls="main-navbar" aria-label="Toggle navigation")
+            i.icon.icon-menu(aria-label="open menu")
+            i.icon.icon-cross(aria-label="close menu")
+        //label.navbar__toggler.btn.btn--primary.btn--action(for="navbar-checkbox")
+        //input(type="checkbox" tabindex="-1").d-hide#navbar-checkbox
+        .navbar__collapsable#main-navbar
+            ul.nav.navbar-nav
+                li.nav__item
+                    a(href="/1") Link 1
+                li.nav__item
+                    a(href="/1") Link 2
+                li.nav__item
+                    a(href="/1") Link 3
 script(type="module")
     include ../../js/navbar.js
