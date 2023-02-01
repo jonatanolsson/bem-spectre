@@ -118,7 +118,6 @@ $control-width-lg: 960px !default;
 $control-width-xl: 1280px !default;
 
 
-
 $full-height-body: true;
 
 // Layout
@@ -150,4 +149,6 @@ $zindex-6: 600 !default;
 $navbar-padding-x: $layout-spacing;
 $navbar-padding-y: $unit-3;
 $navbar-breakpoint: 'sm';
-
+$navbar-background: #eeeeee;
+$navbar-color: $body-font-color;
+$navbar-mobile-menu-background: $navbar-background;

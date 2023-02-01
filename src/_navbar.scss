@@ -2,15 +2,17 @@
 .navbar {
   display: flex;
   justify-content: end;
-  position: relative;
+  color: $navbar-color;
   width: 100%;
   padding: $navbar-padding-y 0;
-
+  background: $navbar-background;
+  position: relative;
 
   &, .navbar__container {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     width: 100%;
+    flex-direction: row;
   }
 
 
@@ -101,6 +103,7 @@
       .navbar__collapsable {
         min-height: 100vh;
         width: 100%;
+        background: $navbar-mobile-menu-background;
         position: absolute;
         top: 100%;
         left: 0;
@@ -140,9 +143,6 @@
       }
 
       .navbar__toggler {
-        position: absolute;
-        top: $navbar-padding-y;
-        right: $navbar-padding-x;
 
         .icon-cross {
           display: inline-block;
